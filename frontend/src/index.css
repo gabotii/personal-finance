@@ -1,0 +1,110 @@
+@import "@fontsource-variable/inter";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens (HSL channels). Chart series colours were validated for colour-vision
+ * deficiency and contrast against the card surface in both modes:
+ *   income = blue, expense = orange, net/balance = aqua.
+ * Text never uses the series colours; amounts use the *-text tokens plus a sign.
+ */
+@layer base {
+  :root {
+    --background: 240 9% 98%;
+    --foreground: 240 10% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 6%;
+    --primary: 240 6% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5% 95%;
+    --secondary-foreground: 240 6% 10%;
+    --muted: 240 5% 95%;
+    --muted-foreground: 240 4% 38%;
+    --accent: 240 5% 94%;
+    --accent-foreground: 240 6% 10%;
+    --destructive: 0 72% 46%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 86%;
+    --ring: 240 6% 10%;
+    --radius: 0.75rem;
+
+    --income: 213 67% 50%; /* #2a78d6 */
+    --expense: 17 82% 56%; /* #eb6834 */
+    --net: 158 73% 40%; /* #1baf7a */
+    --income-text: 163 94% 24%; /* emerald-700, 5.5:1 on white */
+    --expense-text: 240 10% 6%;
+    --positive: 163 94% 24%;
+    --negative: 0 72% 42%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 96%;
+    --card: 240 6% 10%; /* #18181b */
+    --card-foreground: 0 0% 96%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 240 6% 10%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 68%;
+    --accent: 240 4% 18%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 18%;
+    --input: 240 4% 24%;
+    --ring: 240 5% 84%;
+
+    --income: 213 76% 56%; /* #3987e5 */
+    --expense: 17 70% 50%; /* #d95926 */
+    --net: 160 72% 36%; /* #199e70 */
+    --income-text: 158 64% 52%; /* emerald-400 */
+    --expense-text: 0 0% 96%;
+    --positive: 158 64% 52%;
+    --negative: 0 91% 71%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply min-h-dvh bg-background font-sans text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  /* Visible keyboard focus everywhere; mouse focus stays quiet. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}

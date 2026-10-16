@@ -1,0 +1,30 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.db
+*.sqlite3
+
+# Node
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.vite/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
