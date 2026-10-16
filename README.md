@@ -342,3 +342,5 @@ copiado fuera del servidor, y una prueba de restauración periódica.
 | Sesión que se pierde al recargar en HTTP | `COOKIE_SECURE=true` sin HTTPS |
 | `422` al guardar un monto en CLP con decimales | CLP no admite decimales; usa USD/EUR o un monto entero |
 | `409 CATEGORY_IN_USE` | La categoría tiene movimientos: reasígnalos o desactívala |
+
+<img width="1892" height="916" alt="image" src="https://github.com/user-attachments/assets/74f7b7a6-106f-4109-b64a-ec3838be7b75" />
